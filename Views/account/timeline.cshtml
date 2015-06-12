@@ -1,0 +1,43 @@
+﻿@model MvcApplication1.Models.TimeLine
+@{
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+    <div style="margin-left:200px;margin-top:90px">
+    <h1 class="center-block">Your TimeLine</h1>
+</div>
+    <!--Now timeline begin-->
+    <div style="margin-left:50px;margin-top:20px" class="row" >
+        @foreach(var timelineData in ViewBag.data){
+         <div class="col-lg-4">
+             <img class="img-thumbnail" src="/account/RetrieveImage/@timelineData.Id"  alt=" generic placeholder image" width="200" height="200">
+          <h2>@timelineData.Company</h2>
+          <p>@timelineData.Description</p>
+             <section>
+                 <p><br>Prices: @timelineData.Prices<br />Street Address: @timelineData.StreetAddress<br />City: @timelineData.City<br />Phone No: @timelineData.Phone</p>
+                 
+                 <div class="btn-group-justified">
+                    <!-- <form method="post"  action="updatePost/@timelineData.Id">-->
+                         @using (Html.BeginForm("timelineData.Id" , "updatePost", FormMethod.Post, new { target = "_blank" }))
+                         { 
+                     <input name="update"  type="submit" class="btn-success" value="update" />
+                         }
+                     <!--    </form>-->
+                     <form method="post" action="deletePost/@timelineData.Id">
+                     <input type="submit" name="delete" class="btn-success" value="delete" />
+                         </form>
+                 </div>
+             </section>
+        </div><!-- /.col-lg-4 -->   
+             
+        }
+       
+    </div>
+<link href="~/Liberaries/sweetalert.css" rel="stylesheet" />
+<script src="~/Liberaries/sweetalert-dev.js"></script>
+<script>
+    swal();
+    function f1()
+    {
+        
+    }
+</script>

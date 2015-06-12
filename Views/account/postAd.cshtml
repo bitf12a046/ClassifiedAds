@@ -1,0 +1,63 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+    
+    <div class="container" style="align-items:center;justify-content:center;height:600px;margin:200px">
+        <form enctype="multipart/form-data" class="form-signin" method="post" action="saveTimeLineData">
+          Your Email:  <a class="bg-success" name="userMail">@ViewBag.mail</a>
+          ID:  <input type="text" readonly name="uid" class="form-control " value=@Request.Cookies["userID"].Value />
+                <select class="form-control"  name="category">
+
+                    <option value="vehicles">Vehicles</option>
+                    <option value="bikes">Bikes</option>
+                    <option value="bicycle">Bicycle</option>
+                    <option value="animals">Animals</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="mobile">Mobile</option>
+                    <option value="books">Books</option>
+                    <option value="computer">Computer</option>
+                    <option value="other">Other</option>
+                </select>
+            
+            <div style="margin-top:10px">
+
+
+                <input class="form-control" type="file" name="ImageData" id="ImageData" />
+
+            </div>
+            <div style="margin-top:10px">
+                <textarea class="form-control" placeholder="Enter Details of your Item" style="width:400px;height:250px;outline-style:groove;text-align:justify;text-decoration-color:darkorange;font-style:italic;background-color:white"  name="details"></textarea>
+            </div>
+            <div style="margin-top:10px">
+                <input placeholder="Street Address" type="text" name="address" class="form-control" id="t1" />
+            </div>
+
+            <div style="margin-top:10px">
+                <select class="form-control" name="city">
+
+                    <option value="Lahore">Lahore</option>
+                    <option value="karachi">Karachi</option>
+                    <option value="islamabad">Islamabad</option>
+                    <option value="bahawalpur">Bahawalpur</option>
+                    <option value="peshawar">Peshawar</option>
+                    <option value="queta">Queta</option>
+                    <option value="rawalpindi">Rawalpindi</option>
+                    <option value="serghoda">Serghoda</option>
+                    <option value="multan">Multan</option>
+
+                </select>
+            </div>
+            <div>
+                <input class="form-control" type="text" placeholder="Phone No" name="phone" />
+            </div>
+            <div style="margin-top:10px">
+                <input class="form-control" type="text" name="price" placeholder="Prices" />
+            </div>
+            <div style="margin-top:10px">
+                <input class="form-control" type="text" name="company" placeholder="Comapany" />
+            </div>
+
+            <input style="background-color:lightsteelblue;" type="submit" value="Post it" />
+        </form>
+    </div>

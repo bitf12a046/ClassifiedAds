@@ -1,0 +1,68 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+<div style="margin-top:100px">
+    <label class="warning">If you do not want to change some value,just leave them empty</label>
+</div>
+<div class="container" style="align-items:center;justify-content:center;height:600px;margin:10px;margin-bottom:200px">
+    <form enctype="multipart/form-data" class="form-signin" method="post" action="/account/saveUpdatedData/@ViewBag.Id">
+        
+          <a  class="bg-success" name="userMail">Your Email:@ViewBag.email</a>
+         <input type="text" readonly name="uid" class="form-control " value=@Request.Cookies["userID"].Value />
+        <select class="form-control" name="category">
+
+            <option value="vehicles">Vehicles</option>
+            <option value="bikes">Bikes</option>
+            <option value="bicycle">Bicycle</option>
+            <option value="animals">Animals</option>
+            <option value="furniture">Furniture</option>
+            <option value="fashion">Fashion</option>
+            <option value="mobile">Mobile</option>
+            <option value="books">Books</option>
+            <option value="computer">Computer</option>
+            <option value="other">Other</option>
+        </select>
+
+        <div style="margin-top:10px">
+
+            <img class="thumbnail" style="width:170px ; height:170px"  src="/account/RetrieveImage/@ViewBag.Id" />
+            
+            <input class="form-control" type="file" name="ImageData" id="ImageData"  />
+
+        </div>
+        <div style="margin-top:10px">
+            <textarea class="form-control"  style="width:400px;height:250px;outline-style:groove;text-align:justify;text-decoration-color:darkorange;font-style:italic;background-color:white" name="details">@ViewBag.Description</textarea>
+        </div>
+        <div style="margin-top:10px">
+            <input placeholder="Street Address" type="text" name="address" value="@ViewBag.StreetAddress" class="form-control" id="t1" />
+        </div>
+
+        <div style="margin-top:10px">
+            <select class="form-control" name="city">
+
+                <option value="Lahore">Lahore</option>
+                <option value="karachi">Karachi</option>
+                <option value="islamabad">Islamabad</option>
+                <option value="bahawalpur">Bahawalpur</option>
+                <option value="peshawar">Peshawar</option>
+                <option value="queta">Queta</option>
+                <option value="rawalpindi">Rawalpindi</option>
+                <option value="serghoda">Serghoda</option>
+                <option value="multan">Multan</option>
+
+            </select>
+        </div>
+        <div>
+            <input class="form-control" type="text" placeholder="Phone No" name="phone" value="@ViewBag.Phone" />
+        </div>
+        <div style="margin-top:10px">
+            <input class="form-control" type="text" name="price" placeholder="Prices" value="@ViewBag.Prices" />
+        </div>
+        <div style="margin-top:10px">
+            <input class="form-control" type="text" name="company" placeholder="Comapany" value="@ViewBag.Company" />
+        </div>
+
+        <input style="background-color:lightsteelblue;" type="submit" value="Update it" />
+       
+    </form>
+</div>

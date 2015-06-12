@@ -1,0 +1,298 @@
+﻿@model MvcApplication1.Models.Messages 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ad's Globe | Dashboard</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!-- Bootstrap 3.3.4 -->
+    
+    <link href="~/Liberaries/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <link href="~/Liberaries/font-awesome.min.css" rel="stylesheet" />
+   
+    <!-- Ionicons -->
+
+    <link href="~/Liberaries/ionicons.min.css" rel="stylesheet" />
+    <!-- jvectormap -->
+    <link href="~/Liberaries/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+    
+    <!-- Theme style -->
+    <link href="~/Liberaries/AdminLTE.css" rel="stylesheet" />
+   
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link href="~/Liberaries/_all-skins.min.css" rel="stylesheet" />
+    
+   
+</head>
+<body class="skin-blue sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>A</b>G</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>Admin</b> Ad's Globe</span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="/" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                       
+                        <!-- Notifications: style can be found in dropdown.less -->
+                        <li class="dropdown notifications-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="label label-warning">@ViewBag.count</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have @ViewBag.count notifications</li>
+                                <li>
+                                    @foreach (var m in ViewBag.messages) { 
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="list-group-item-heading">
+                                        <li>
+                                            <a onclick="ShowMessages()" href="#">
+                                                <i class=" text-aqua"></i> @m.Subject
+                                            </a>
+                                        </li>
+                                        
+                                    </ul>
+                                    }
+                                </li>
+                                <li class="footer"><a href="#">View all</a></li>
+                            </ul>
+                        </li>
+                        <!-- Tasks: style can be found in dropdown.less -->
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <!-- Menu Body -->
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="/" class="btn btn-default btn-flat">Sign out</a>
+                            </div>
+                        </li>
+                   
+                    <!-- Control Sidebar Toggle Button -->
+                    <li>
+                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="~/Images/avatar5.png" class="img-circle" alt="User Image" />
+                    </div>
+                    <div class="pull-left info">
+                        <p>Shehraz Khan</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    </div>
+                </div>
+                <!-- search form -->
+                <form action="#" method="get" class="sidebar-form">
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control" placeholder="Search users here" />
+                        <span class="input-group-btn">
+                            <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </form>
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+               
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Ad's Globe
+                    <small>Dashboard</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="active">Dashboard</li>
+                </ol>
+            </section>
+            <!-- Main content -->
+            <section class="content">
+                <!-- Info boxes -->
+                <div class="row">
+
+                    <!-- fix for small devices only -->
+                    <div class="clearfix visible-sm-block"></div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Posts</span>
+                                <span class="info-box-number">@ViewBag.postCount</span>
+                            </div><!-- /.info-box-content -->
+                        </div><!-- /.info-box -->
+                    </div><!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Members</span>
+                                <span class="info-box-number">@ViewBag.userCount</span>
+                            </div><!-- /.info-box-content -->
+                        </div><!-- /.info-box -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Monthly Recap Report</h3>
+                                <div class="box-tools pull-right">
+                                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                    
+                                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                </div>
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <p class="text-center">
+                                            <strong>Visitors: 1 Jan, 2015 - 30 Jul, 2015</strong>
+                                        </p>
+                                        <div class="chart">
+                                            <!-- Sales Chart Canvas -->
+                                            <canvas id="salesChart" height="180"></canvas>
+                                        </div><!-- /.chart-responsive -->
+                                    </div><!-- /.col -->
+
+                                </div><!-- ./box-body -->
+
+                            </div><!-- /.box -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                    <!-- Main row -->
+                    <div class="row">
+                        <!-- Left col -->
+                        <div class="col-md-12">
+                            <!-- MAP & BOX PANE -->
+                            <div class="panel-info" id="d1">
+                                @foreach (var l in ViewBag.users)
+                                {
+                                    <div style="margin-right:40px" class="pull-left image">
+                                        <img src="~/Images/avatar5.png" class="img-circle" alt="User Image" />
+                                        <br />
+                                        <label class="text-light-blue">@l.Name</label>
+                                        <br />
+                                        <label class="text-light-blue">@l.Email</label>
+
+
+                                        <form method="post" action="deleteUser/@l.Id">
+                                            <input type="submit" name="delete" class="btn-success" value="delete" />
+                                        </form>
+
+
+                                    </div>
+
+                                }
+                            </div>
+                            <div id="d2">
+                                <div style="margin-left:50px;margin-top:20px" class="row">
+                                    @foreach (var timelineData in ViewBag.posts)
+                                    {
+                                        <div class="col-lg-4">
+                                            <img class="img-thumbnail" src="/account/RetrieveImage/@timelineData.Id" alt=" generic placeholder image" width="200" height="200">
+                                            <h2>@timelineData.Company</h2>
+                                            <p>@timelineData.Description</p>
+                                            <section>
+                                                <p><br>Prices: @timelineData.Prices<br />Street Address: @timelineData.StreetAddress<br />City: @timelineData.City<br />Phone No: @timelineData.Phone</p>
+                                                <div class="btn-group-justified">
+
+                                                    <form method="post" action="deletePost/@timelineData.Id">
+                                                        <input type="submit" name="delete" class="btn-success" value="delete" />
+                                                    </form>
+                                                </div>
+
+                                            </section>
+                                        </div><!-- /.col-lg-4 -->
+
+                                    }
+
+                                </div>
+                            </div>
+
+                           
+                        </div><!-- /.row -->
+
+
+
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </section><!-- /.content -->
+        </div><!-- /.content-wrapper -->
+        </div>
+ 
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.0
+            </div>
+            <strong>Copyright &copy; 2014-2015 <a href="/">Ad's Globe</a>.</strong> All rights reserved.
+        </footer>
+    <script src="~/Liberaries/sweetalert.min.js"></script>
+    <link href="~/Liberaries/sweetalert.css" rel="stylesheet" />
+    <script src="~/Liberaries/sweetalert-dev.js"></script>
+    <script>
+  
+        function ShowMessages() {
+            
+        }
+    </script>
+        <!-- jQuery 2.1.4 -->
+    <script src="~/Liberaries/jquery-1.11.3.js"></script>
+        <!-- Bootstrap 3.3.2 JS -->
+    <script src="~/Liberaries/bootstrap.min.js"></script>
+        
+        <!-- FastClick -->
+    <script src="~/Liberaries/fastclick.min.js"></script>
+       
+        <!-- AdminLTE App -->
+    <script src="~/Liberaries/app.min.js"></script>
+      
+        <!-- Sparkline -->
+    <script src="~/Liberaries/jquery.sparkline.min.js"></script>
+        
+        <!-- jvectormap -->
+    <script src="~/Liberaries/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="~/Liberaries/jquery-jvectormap-world-mill-en.js"></script>
+        
+        <!-- SlimScroll 1.3.0 -->
+    <script src="~/Liberaries/jquery.slimscroll.min.js"></script>
+        
+        <!-- ChartJS 1.0.1 -->
+    <script src="~/Liberaries/Chart.min.js"></script>
+       
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="~/Liberaries/dashboard2.js"></script>
+       
+        <!-- AdminLTE for demo purposes -->
+    <script src="~/Liberaries/demo.js"></script>
+        
+</body>
+</html>

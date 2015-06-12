@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="~/Images/superman.png">
+    <script src="~/Liberaries/bootbox.min.js"></script>
+    <title>@ViewBag.Title</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Liberaries/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Liberaries/sweetalert.min.js"></script>
+    <script src="~/Liberaries/ie_emulation_modes_warning.js"></script>
+    <script src="~/Liberaries/sweetalert-dev.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+
+
+
+
+</head>
+<!-- NAVBAR
+================================================== -->
+<body onload="setUser()">
+    <div style="margin-bottom:40px" class="container">
+
+        <!-- Static navbar -->
+        <nav id="naviga" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Ad's Globe</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li role="presentation" class="active"><a href="@ViewBag.Home">Home</a></li>
+                        <li role="presentation">
+                            <a href="/home/About">About</a>
+                        </li>
+                        <li role="presentation">
+
+                            <a id="contact" href=@ViewBag.Contact>Contact</a>
+                         
+                        </li>
+
+                    </ul>
+
+
+                    <ul class=" nav nav-tabs navbar-right">
+                        <li class="form-group"><a href=@ViewBag.SignUp class="icon-bar" style="text-align:right;background-color:lightgreen">Sign up <span class="sr-only">(current)</span></a></li>
+                        <li class="form-group"><a href=@ViewBag.SignIn class="icon-bar" style="background-color:lightsalmon">Sign in</a></li>
+                        <li class="form-group"><a href=@ViewBag.SignIn class="icon-bar" style="background-color:lightseagreen">Submit an Ad</a></li>
+                    </ul>
+
+
+                </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+        </nav>
+    </div>
+
+    <!-- NAVBAR Ends
+    ================================================== -->
+
+
+    @RenderBody();
+
+    <!--footer start-->
+    <footer id="footer">
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div style="background-color: lightsteelblue">
+                            <h2><span>Ad's</span>-Globe</h2>
+                         <p style="font-size:x-large;margin-left:140px" class="text-center">Ad'sGlobe.com.pk is a free local classifieds site. Sell anything from used cars to mobiles, furniture, laptops, clothing and more. Submit ads for free and without creating an account. If you want to buy something - here you will find interesting items, cheaper than in the store. Start buying and selling in the most easy way on Ad'sGlobe.com.pk.
+                           </p>
+                        </div>
+                    </div>
+                    <!--Slider-->
+                    <link rel="stylesheet" type="text/css" href="~/Liberaries/style.css" />
+                    <script src="~/Liberaries/jquery-min.js"></script>
+                    <link href="~/Liberaries/style.css" rel="stylesheet" />
+                    <script src="~/Liberaries/jquery-1.11.3.js"></script>
+                    <script type="text/javascript" src="~/Liberaries/wowslider.js"></script>
+                    <script src="~/Liberaries/wowslider.js"></script>
+                    <script src="~/Liberaries/script.js"></script>
+                    
+                    <div id="wowslider-container1">
+                        <div class="ws_images">
+                            <ul>
+                                <li><img src="~/Images/24611.jpg" alt="Bikes for sale" title="Bikes for sale" id="wows1_0" /></li>
+                                <li><img src="~/Images/8rtv1caker1.jpg" alt="Cars for sale" title="Cars for sale" id="wows1_1" /></li>
+                                <li><img src="~/Images/bugatti_veyron1.jpg" alt="Cars for sale" title="Cars for sale" id="wows1_2" /></li>
+                                <li><img src="~/Images/carshdwallpapers61.jpg" alt="Cars for sale" title="Cars for sale" id="wows1_3" /></li>
+                                <li><img src="~/Images/fashion.jpg" alt="fashion Produc for sale" title="fashion Produc for sale" id="wows1_4" /></li>
+                                <li><img src="~/Images/animal.jpg" alt="animal" title="animal" id="wows1_5" /></li>
+                                <li><img src="~/Images/dsc_1827.jpg" alt="DSC_1827" title="DSC_1827" id="wows1_6" /></li>
+                                <li><img src="~/Images/room_sofas_furniture_style_modern_75461_1920x1080.jpg" alt="furniture for sale" title="furniture for sale" id="wows1_7" /></li>
+                                <li><img src="~/Images/yellow_computer_macbook_iphone_31071_1920x1080.jpg" alt="Computer for sale" title="Computer for sale" id="wows1_8" /></li>
+                                <li><a href="http://wowslider.com/vi"><img src="~/Images/fur1.jpg" alt="bootstrap carousel example" title="furniture for sale" id="wows1_9" /></a></li>
+                                <li><img src="~/Images/dogforsaleinhyderabad.jpg" alt="dog-for-sale-in-hyderabad" title="dog-for-sale-in-hyderabad" id="wows1_10" /></li>
+                            </ul>
+                        </div>
+                        <div class="ws_bullets">
+                            <div>
+                                <a href="#" title="Bikes for sale"><span><img src="~/Images/24611.jpg" alt="Bikes for sale" />1</span></a>
+                                <a href="#" title="Cars for sale"><span><img src="~/Images/8rtv1caker1.jpg" alt="Cars for sale" />2</span></a>
+                                <a href="#" title="Cars for sale"><span><img src="~/Images/bugatti_veyron1.jpg" alt="Cars for sale" />3</span></a>
+                                <a href="#" title="Cars for sale"><span><img src="~/Images/carshdwallpapers61.jpg" alt="Cars for sale" />4</span></a>
+                                <a href="#" title="fashion Produc for sale"><span><img src="~/Images/fashion.jpg" alt="fashion Produc for sale" />5</span></a>
+                                <a href="#" title="animal"><span><img src="~/Images/animal.jpg" alt="animal" />6</span></a>
+                                <a href="#" title="DSC_1827"><span><img src="~/Images/dsc_1827.jpg" alt="DSC_1827" />7</span></a>
+                                <a href="#" title="furniture for sale"><span><img src="~/Images/room_sofas_furniture_style_modern_75461_1920x1080.jpg" alt="furniture for sale" />8</span></a>
+                                <a href="#" title="Computer for sale"><span><img src="~/Images/yellow_computer_macbook_iphone_31071_1920x1080.jpg" alt="Computer for sale" />9</span></a>
+                                <a href="#" title="furniture for sale"><span><img src="~/Images/fur1.jpg" alt="furniture for sale" />10</span></a>
+                                <a href="#" title="dog-for-sale-in-hyderabad"><span><img src="~/Images/dogforsaleinhyderabad.jpg" alt="dog-for-sale-in-hyderabad" />11</span></a>
+                            </div>
+                        </div>
+                        <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com">jquery carousel slider</a> by WOWSlider.com v8.2</div>
+                        <div class="ws_shadow"></div>
+                    </div>	
+                    <!--end slider-->
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Service</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a class="alert-success" href=@ViewBag.About>Online Help</a></li>
+                                <li><a class="alert-success" href=@ViewBag.SignUp>Sign Up</a></li>
+                                <li><a class="alert-success" href=@ViewBag.SignIn>Sign In</a></li>
+                                <li><a class ="alert-success" href=@ViewBag.SignIn>Submit an Ad</a></li>
+                                <li><a href=@ViewBag.Contact>FAQ’s</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Pages</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/Items/loadedItems?category=vehicles ">Vehicle</a></li>
+                                <li><a href="/Items/loadedItems?category=bikes">Bikes</a></li>
+                                <li><a href="/Items/loadedItems?category=books">Books</a></li>
+                                <li><a href="/Items/loadedItems?category=computer">Computer</a></li>
+                                <li><a href="/Items/loadedItems?category=animals">Animals</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Policies</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a class="alert-success" onclick=termOfUse();  >Terms of Use</a></li>
+                                <li><a class="alert-success" onclick=privacyPolicy();>Privecy Policy</a></li>
+                                
+                                <li><a class="alert-success" href=@ViewBag.Contact>Contact Us</a></li>
+                                <li><a class="alert-success" href=@ViewBag.About>About us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <p class="pull-left">Copyright © 2015 Ad's Globe Inc. All rights reserved.</p>
+                    <p class="pull-right">Designed by <span><a target="_blank" href="">Shehraz Khan</a></span></p>
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+    <!--footer close-->
+    <link href="~/Liberaries/sweetalert.css" rel="stylesheet" />
+    <script src="~/Liberaries/sweetalert-dev.js"></script>
+    <script src="~/Liberaries/sweetalert.min.js"></script>
+<script>
+        function termOfUse()
+        {
+            
+            swal('Terms of Use','You will not use it for illigal puposes.');
+           
+        }
+        function privacyPolicy() {
+            swal('Privacy Policy','Web will use cookie of your web browser.');
+        }
+        
+        $(window).load(function () {
+            var name=document.title;
+        swal("Well Come to"+ name);
+        if (getCookie("email") != "") {
+            swal('user already signin');
+
+            $('#contact').append('<label style="margin-left:50px" class="alert-success">' + getCookie("email") + '</label>');
+
+        }
+    });
+        
+        function setUser() {
+            if (getCookie("email") != "") {
+                swal('user already signin');
+                
+                $('#contact').append('<label style="margin-left:50px" class="alert-success" >' + getCookie("email") + '</label>');
+                window.location.href = "/account/timeline";
+            }
+        }
+       
+        function saveCredential() {
+
+            var txtBox = $('#inputEmail').val();
+            var txtBox2 = $('#inputPassword').val();
+            document.cookie = "email=" + txtBox;
+
+            document.cookie = "password=" + txtBox2;
+        }
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1);
+                if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+            }
+            return "";
+        }
+        function mailMe() {
+            var link = "mailto:bitf12a046@pucit.edu.pk"
+                 + "&subject=" + escape(document.getElementById('subject').value)
+                 + "&body=" + escape(document.getElementById('message').value)
+            ;
+
+            window.location.href = link;
+        }
+        function redirect()
+        {
+
+            window.location.href = "/Items/loadedItems";
+        }
+
+        /* function getCookie(name)
+         {
+             var re = new RegExp(name + "=([^;]+)");
+             var value = re.exec(document.cookie);
+             return (value != null) ? unescape(value[1]) : null;
+         }*/
+    </script>
+    <script>
+        $('#checkName').on('click', function () {
+            var name = $('#name').val();
+           
+            $.getJSON('/account/checkName?name=' + name, function (data) {
+                swal(data);
+                if (data == "")
+                    $('#showAvailable').text('Name is Availbale');
+                else
+                    $('#showAvailable').text('Name is not Availbale');
+            }
+                );
+        });
+        function nameVerify() {
+            var name = $('#name').val();
+            var flag = true;
+            $.getJSON('/account/checkName?name=' + name, function (data) {
+       
+                if (data == "") {
+                    $('#showAvailable').text('Name is Available');
+                    flag = true;
+                    swal(flag);
+                    return flag;
+                }
+                else {
+                    $('#showAvailable').text('Name is not Available');
+                    flag = false;
+                    return flag;
+                }
+            }
+                );
+            return flag;
+        }
+        function search() {
+              
+           
+            var iname = $('#searchbar').val();
+            var city = $('#citySelector').val();
+           
+            $.getJSON('/Items/loadedItems1?ItemName=' + iname + '& city=' + city, function (data) {
+                sweetAlert(iname, city);
+                for (i = 0; i < data.size; i++) {
+                   
+                   // $('#idiv').Append(
+                     //   '<label class="success">'+data.Id+'</label>'
+                    //'<div class="col-lg-4">' +
+                    // '   <img class="img-thumbnail" src="/account/RetrieveImage/' + data.Id + '" alt=" generic placeholder image" width="200" height="200">' +
+                    //  '  <h2>' + data.Company + '</h2>' +
+
+                    //   ' <p>' + data.Description + '</p>' +
+                    //   ' <section>' +
+                    //   '     <p><br>Prices: ' + data.Prices + '<br />Street Address:' + data.StreetAddress + '<br />City: ' + data.City + '<br />Phone No: ' + data.Phone + '</p>' +
+                    //    '</section>' +
+                    //'</div>'
+                    //        );
+                    sweetAlert(data.Company);
+                }
+
+            });
+              
+        }
+    </script>
+    <script src="~/Liberaries/jquery-min.js"></script>
+
+    <script src="~/Liberaries/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+
+    <script src="../../assets/js/vendor/holder.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="~/Liberaries/viewport-bug-workaround.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="~/Images/superman.png">
+    <script src="~/Liberaries/bootbox.min.js"></script>
+    <title>@ViewBag.Title</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Liberaries/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Liberaries/sweetalert.min.js"></script>
+    <script src="~/Liberaries/ie_emulation_modes_warning.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+
+
+
+
+</head>
+<!-- NAVBAR
+================================================== -->
+<body onload="setUser()">
+    <div style="margin-bottom:40px" class="container">
+
+        <!-- Static navbar -->
+        <nav id="naviga" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Ad's Globe</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li role="presentation" class="active"><a href="/">Home</a></li>
+                        <li role="presentation">
+                            <a href="/home/about">About</a>
+                        </li>
+                        <li role="presentation">
+
+                            <a id="contact" href="/home/contact">Contact</a>
+
+                        </li>
+
+                    </ul>
+
+
+                    <ul class=" nav nav-tabs navbar-right">
+                     <li class="nav-pills"> User ID:  <a name="id" class="alert-success">@Request.Cookies["userID"].Value</a></li>
+                        <li class="form-group"><a onclick="signoutUser()" href="/" class="icon-bar" style="text-align:right;background-color:lightgreen">Sign out <span class="sr-only">(current)</span></a></li>
+                       
+                        <li class="form-group"><a href="/account/postAd" class="icon-bar" style="background-color:lightseagreen">Submit an Ad</a></li>
+                    </ul>
+
+
+                </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+        </nav>
+    </div>
+
+    <!-- NAVBAR Ends
+    ================================================== -->
+    @RenderBody();
+
+    <!--footer start-->
+    <footer  id="footer">
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="alert-warning">
+                            <h2><span>Ad's</span>-Globe</h2>
+                            <p class="alert-info">Ad'sGlobe.com.pk is a free local classifieds site. Sell anything from used cars to mobiles, furniture, laptops, clothing and more. Submit ads for free and without creating an account. If you want to buy something - here you will find interesting items, cheaper than in the store. Start buying and selling in the most easy way on Ad'sGlobe.com.pk.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="col-sm-3">
+                            <div class="video-gallery text-center">
+                                <a href="#">
+
+                                    <img style="width:200px;height:200px" src="~/Images/sale.jpg" class="thumbnail" />
+                                    <div class="overlay-icon">
+
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="video-gallery text-center">
+                                <a href="#">
+
+                                    <img style="width:200px;height:200px" src="~/Images/bestbuy.png" class="thumbnail" />>
+                                    <div class="overlay-icon">
+
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Service</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a class="alert-success" href=@ViewBag.About>Online Help</a></li>
+                                <li><a class="alert-success" href=@ViewBag.SignUp>Sign Up</a></li>
+                                <li><a class="alert-success" href=@ViewBag.SignIn>Sign In</a></li>
+                                <li><a class="alert-success" href=@ViewBag.SignIn>Submit an Ad</aclass></li>
+                                <li><a href=@ViewBag.Contact>FAQ’s</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Pages</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/Items/loadedItems?category=vehicles ">Vehicle</a></li>
+                                <li><a href="/Items/loadedItems?category=bikes">Bikes</a></li>
+                                <li><a href="/Items/loadedItems?category=books">Books</a></li>
+                                <li><a href="/Items/loadedItems?category=computer">Computer</a></li>
+                                <li><a href="/Items/loadedItems?category=animals">Animals</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Policies</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a class="alert-success" onclick=termOfUse();>Terms of Use</a></li>
+                                <li><a class="alert-success" onclick=privacyPolicy();>Privecy Policy</a></li>
+
+                                <li><a class="alert-success" href=@ViewBag.Contact>Contact Us</a></li>
+                                <li><a class="alert-success" href=@ViewBag.About>About us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <p class="pull-left">Copyright © 2015 Ad's Globe Inc. All rights reserved.</p>
+                    <p class="pull-right">Designed by <span><a target="_blank" href="">Shehraz Khan</a></span></p>
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+    <!--footer close-->
+    <link href="~/Liberaries/sweetalert.css" rel="stylesheet" />
+    <script src="~/Liberaries/sweetalert-dev.js"></script>
+    <script src="~/Liberaries/sweetalert.min.js"></script>
+    <script>
+        function termOfUse() {
+
+            swal('Terms of Use', 'You will not use it for illigal puposes.');
+
+        }
+        function privacyPolicy() {
+            swal('Privacy Policy', 'Web will use cookie of your web browser.');
+        }
+
+        function setUser() {
+            if (getCookie("email") != "") {
+                swal('user is now signin','Your timeline here!...','success');
+                $('#contact').append('<label style="margin-left:50px" id="elabel" class="alert-success" >' + getCookie("email") + '</label>');
+                $('#contact').append('<img style="margin-left:20px"  src="~/Images/avatar5.png" />');
+            }
+        }
+        
+        function saveCredential() {
+
+            var txtBox = $('#inputEmail').val();
+            var txtBox2 = $('#inputPassword').val();
+            document.cookie = "email=" + txtBox;
+
+            document.cookie = "password=" + txtBox2;
+        }
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1);
+                if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+            }
+            return "";
+        }
+        function mailMe() {
+            var link = "mailto:bitf12a046@pucit.edu.pk"
+                 + "&subject=" + escape(document.getElementById('subject').value)
+                 + "&body=" + escape(document.getElementById('message').value)
+            ;
+
+            window.location.href = link;
+        }
+        function signoutUser() {
+
+
+            document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            document.cookie = 'password=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        }
+        /* function getCookie(name)
+         {
+             var re = new RegExp(name + "=([^;]+)");
+             var value = re.exec(document.cookie);
+             return (value != null) ? unescape(value[1]) : null;
+         }*/
+    </script>
+
+    <script src="~/Liberaries/jquery-min.js"></script>
+
+    <script src="~/Liberaries/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+
+    <script src="../../assets/js/vendor/holder.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="~/Liberaries/viewport-bug-workaround.js"></script>
+
+</body>
+</html>

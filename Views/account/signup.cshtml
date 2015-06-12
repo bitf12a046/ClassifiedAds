@@ -1,0 +1,43 @@
+﻿@model MvcApplication1.Models.User
+@{
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+    <div id="d1" style="width:420px" class="container">
+        @using (Html.BeginForm("insert", "account", FormMethod.Post, new { onsubmit = "return nameVerify();", style = "align-content:center;width:400px;margin:100px", @class = "form-signin" }))
+        {
+        @*<form style="align-content:center;width:400px;margin:100px" class="form-signin" method="post" action="insert">*@
+            <h2 class="form-signin-heading">Please sign up</h2>
+            <label for="inputText" class="sr-only">Name</label>
+            @Html.TextBoxFor(model => model.Name, new { name = "Name", id = "name", @class = "form-control", placeholder = "Name", required = "required" })
+            <input type="button" class="success" value="check availablity" id="checkName" />
+            <label class="warning" id="showAvailable" ></label>
+            @*<input type="text" name="name" id="name" class="form-control" placeholder="Name" required autofocus>*@
+            <label for="inputEmail" class="sr-only">Email address</label>
+            @Html.TextBoxFor(model => model.Email, new { type = "email", name = "Email", id = "inputEmail", @class = "form-control", placeholder = "Email address", required = "required" })
+           @* <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>*@
+            <label for="inputPassword" class="sr-only">Password</label>
+             @Html.TextBoxFor(m => m.Password, "password", new { @class = "form-control", id = "Password", type = "password", placeholder = "Password", required = "required" })
+            @*<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>*@
+            <label for="inputPassword" class="sr-only">Re-Enter Password</label>
+             @Html.TextBoxFor(m => m.Password, "password", new { @class = "form-control", id = "confirmPassword", type = "password", placeholder = "Confirm Password", required = "required" })
+           @* <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>*@
+            <button id="signupBtn"  class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+            <div class="right">
+                <p class="alert-success">
+                    By having an account you will have access to My ads where you can:
+
+                    Edit or Delete your Ads
+                    Check responses for your Ads
+                    See saved Ads
+
+                    Provide your e-mail address & password and click confirm link in e-mail which will be sent to you..
+                </p>
+            </div>
+        }
+        @*</form>*@
+        <div style="width:420px;height:500px;transform:{top:50%;left:50%}" id="d2">
+
+        </div>
+    </div>
+

@@ -1,0 +1,125 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+   
+}
+
+    <!-- Search bar
+    ================================================== -->
+    <div style="margin-top:100px;margin-left:100px " class="active">
+        <!--<form class="form-group" method="post" action="/Items/loadedItems1">-->
+          @*  @using (Html.BeginForm("loadedItems1", "Items", FormMethod.Post)){*@
+            <div class="row">
+
+                <div class="col-lg-6">
+                    <div >
+                       
+                 
+                            <select id="citySelector"  name="cityBtn" class="form-control" data-toggle="dropdown" aria-expanded="false">
+                            
+                                <option value="karachi">Karachi </option>
+                                <option value="lahore">Lahore</option>
+                                <option value="islamabad">Islamabad</option>
+                                <option value="bahawalpur">Bahawalpur</option>
+                                <option value="dgk">DGK</option>
+                                <option value="rawalpindi">Rawalpindi</option>
+                                <option value="gujranwala">Gujranwala</option>
+                                <option value="sialkot">Sialkot</option>
+                                <option value="abotabad">Abotabad</option>
+                                <option value="bahawalnagar">Bahawalnagar</option>
+                                <option value="queta">Queta</option>
+                                <option value="peshawar">Peshawar</option>
+                                <option value="qasur">Qasur</option>
+                                <option value="shahdara">Shahdara</option>
+                            </select>
+                        <input type="text" class="form-control " id="searchbar" name="searchbar"  placeholder="search" aria-label="...">
+                        <input type="button" class="success" value="search" onclick="search()" />  
+                        </div><!-- /btn-group -->
+                    <!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+            @* }*@
+        <!--</form>-->
+    </div>
+<div class="form-horizontal" id="idiv">
+
+</div>
+
+<!--
+<div style="margin-right:10px" class="navbar-right" >
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-success">Vehicles</li>
+        <li class="list-group-item list-group-item-info">Bikes</li>
+        <li class="list-group-item list-group-item-warning">Mobiles</li>
+        <li class="list-group-item list-group-item-danger">Books</li>
+        <li class="list-group-item list-group-item-text">Furniture</li>
+        <li class="list-group-item list-group-item-success">All Itemss</li>
+    </ul>
+</div>
+    -->
+
+    <div class="row">
+        <div class="col-xs-6 col-md-3">
+            <a name="category" href="/Items/loadedItems?category=vehicles " class="thumbnail">
+                <img  src="Images/slide1.jpg" alt="Vehicles">
+                <span class="label label-primary">Vehicles</span>
+            </a>
+
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="/Items/loadedItems?category=mobile" class="thumbnail">
+                <img src="Images/small3.jpg" alt="...">
+                <span class="label label-info">Mobiles</span>
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="/Items/loadedItems?category=furniture" class="thumbnail">
+                <img src="Images/homeFur.jpg" alt="...">
+                <span class="label label-primary">Home Furniture</span>
+            </a>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-md-3">
+            <a href="/Items/loadedItems?category=bicycle" class="thumbnail">
+                <img src="Images/small1.jpg" alt="...">
+                <span class="label label-info">Bicycles</span>
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="/Items/loadedItems?category=bikes" class="thumbnail">
+                <img src="Images/small2.jpg" alt="...">
+                <span class="label label-info">Bikes</span>
+            </a>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+            <a href="/Items/loadedItems?category=books" class="thumbnail">
+                <img src="Images/books.jpg" alt="...">
+                <span class="label label-info">Books</span>
+            </a>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-md-3">
+            <a href="/Items/loadedItems?category=fashion" class="thumbnail">
+                <img src="Images/fashion1.jpg" alt="...">
+                <span class="label label-primary">Fashion and Beauty</span>
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="/Items/loadedItems?category=animals" class="thumbnail">
+                <img src="Images/animal.jpg" alt="...">
+                <span class="label label-info">Animals</span>
+
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="/Items/loadedItems?category=computer" class="thumbnail">
+                <img src="Images/com.jpg" alt="...">
+                <span class="label label-info">Computers</span>
+
+            </a>
+        </div>
+    </div>

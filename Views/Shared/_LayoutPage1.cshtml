@@ -27,7 +27,7 @@
 </head>
 <!-- NAVBAR
 ================================================== -->
-<body onload="setUser()">
+<body onload="setUser1()">
     <div style="margin-bottom:40px" class="container">
 
         <!-- Static navbar -->
@@ -228,7 +228,14 @@
                 window.location.href = "/account/timeline";
             }
         }
-       
+        function setUser1() {
+            if (getCookie("email") != "") {
+                swal('user already signin');
+
+                $('#contact').append('<label style="margin-left:50px" class="alert-success" >' + getCookie("email") + '</label>');
+               
+            }
+        }
         function saveCredential() {
 
             var txtBox = $('#inputEmail').val();

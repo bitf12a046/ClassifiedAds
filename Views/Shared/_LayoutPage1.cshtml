@@ -27,7 +27,7 @@
 </head>
 <!-- NAVBAR
 ================================================== -->
-<body onload="setUser1()">
+<body >
     <div style="margin-bottom:40px" class="container">
 
         <!-- Static navbar -->
@@ -215,16 +215,15 @@
         if (getCookie("email") != "") {
             swal('user already signin');
 
-            $('#contact').append('<label style="margin-left:50px" class="alert-success">' + getCookie("email") + '</label>');
+            $('#contact').append('<a style="margin-left:50px" href="/account/timeline" class="alert-success">' + getCookie("email") + '</a>');
 
         }
     });
         
         function setUser() {
             if (getCookie("email") != "") {
-                swal('user already signin');
                 
-                $('#contact').append('<label style="margin-left:50px" class="alert-success" >' + getCookie("email") + '</label>');
+                $('#contact').append('<div><a href="/account/timeline" style="margin-left:50px" class="alert-success" >' + getCookie("email") + '</a></div>');
                 window.location.href = "/account/timeline";
             }
         }

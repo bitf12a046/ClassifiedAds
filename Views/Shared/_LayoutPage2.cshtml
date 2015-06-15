@@ -195,7 +195,7 @@
         function setUser() {
             if (getCookie("email") != "") {
                 swal('user is now signin','Your timeline here!...','success');
-                $('#contact').append('<label style="margin-left:50px" id="elabel" class="alert-success" >' + getCookie("email") + '</label>');
+                $('#contact').append('<a href="/account/timeline" style="margin-left:50px" id="elabel" class="alert-success" >' + getCookie("email") + '</a>');
                 $('#contact').append('<img style="margin-left:20px"  src="~/Images/avatar5.png" />');
             }
         }

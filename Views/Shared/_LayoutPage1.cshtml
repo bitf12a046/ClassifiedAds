@@ -314,7 +314,8 @@
             var city = $('#citySelector').val();
            
             $.getJSON('/Items/loadedItems1?ItemName=' + iname + '& city=' + city, function (data) {
-                sweetAlert(iname, city);
+                if(d==null)
+                sweetAlert('No data availbale with that options');
                 for (i = 0; i < data.size; i++) {
                    
                    // $('#idiv').Append(

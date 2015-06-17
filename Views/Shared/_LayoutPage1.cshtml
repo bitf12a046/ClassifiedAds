@@ -217,7 +217,7 @@
         $(window).load(function () {
            
         if (getCookie("email") != "") {
-            swal('user already signin');
+    
 
             $('#contact').append('<a style="margin-left:50px" href="/account/timeline" class="alert-success">' + getCookie("email") + '</a>');
 
@@ -228,7 +228,7 @@
             if (getCookie("email") != "") {
                 swal('user already signIn');
                 $('#contact').append('<div><a href="/account/timeline" style="margin-left:50px" class="alert-success" >' + getCookie("email") + '</a></div>');
-                window.location.href = "/account/timeline";
+               // window.location.href = "/account/timeline";
             }
         }
         function setUser1() {

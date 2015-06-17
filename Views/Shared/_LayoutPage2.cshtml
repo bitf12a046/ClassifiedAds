@@ -26,7 +26,7 @@
 </head>
 <!-- NAVBAR
 ================================================== -->
-<body >
+<body onload="setUser()" >
     <div style="margin-bottom:40px" class="container">
 
         <!-- Static navbar -->
@@ -57,8 +57,8 @@
 
 
                     <ul class=" nav nav-tabs navbar-right">
-                        <li class="form-group"><a href="/account/search" class="icon-bar" style="background-color:lightseagreen">Search Page</a></li>
-                     <li class="nav-pills"> User ID:  <a name="id" class="alert-success">@Request.Cookies["userID"].Value</a></li>
+                        <li class="form-group"><a href="/account/search" class="icon-bar label-info" >Search Page</a></li>
+                     <li class="nav-pills"><a name="id" class=" success"> User ID:  @Request.Cookies["userID"].Value</a></li>
                         <li class="form-group"><a onclick="signoutUser()" href="/" class="icon-bar" style="text-align:right;background-color:lightgreen">Sign out <span class="sr-only">(current)</span></a></li>
                        
                         <li class="form-group"><a href="/account/postAd" class="icon-bar" style="background-color:lightseagreen">Submit an Ad</a></li>
@@ -197,8 +197,8 @@
         $(window).load(function () {
 
             if (getCookie("email") != "") {
-                swal('user already signin');
 
+                swal("Wellcome again");
                 $('#contact').append('<a style="margin-left:50px" href="/account/timeline" class="alert-success">' + getCookie("email") + '</a>');
 
             }
@@ -214,9 +214,10 @@
 
         function setUser() {
             if (getCookie("email") != "") {
-                swal('user is now signin','Your timeline here!...','success');
+                $('#contact').append('<a href="/account/timeline"><span style="margin-left:50px" class="glyphicon glyphicon-user"  aria-hidden="true"></span></a>');
                 $('#contact').append('<a href="/account/timeline" style="margin-left:50px" id="elabel" class="alert-success" >' + getCookie("email") + '</a>');
-                $('#contact').append('<img style="margin-left:20px"  src="~/Images/avatar5.png" />');
+                
+               
             }
         }
         
@@ -238,6 +239,15 @@
             }
             return "";
         }
+        function createCookie(name, value, days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                var expires = "; expires=" + date.toGMTString();
+            }
+            else var expires = "";
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
         function mailMe() {
             var link = "mailto:bitf12a046@pucit.edu.pk"
                  + "&subject=" + escape(document.getElementById('subject').value)
@@ -247,7 +257,10 @@
             window.location.href = link;
         }
         function signoutUser() {
-
+            swal("success");
+            createCookie('UserId',"", -1);
+            createCookie('email',"", -1);
+            
             document.cookie = 'UserId=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
             document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
             document.cookie = 'password=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';

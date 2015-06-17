@@ -1,5 +1,12 @@
 ﻿@{
-    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    if (ViewBag.flag)
+    {
+        Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+    }
 }
 <div class="container">
    
@@ -13,29 +20,30 @@
             <h2 class="title text-center">About us</h2>
             
             <div class="form-group col-md-12">
-                <br />
-                <span style="font-size:x-large;margin-left:140px" class="label label-default">Punjab University of Information Technology</span>
-                <br />
-                <br />
-                <span style="font-size:larger ; margin-left: 160px" class="label label-primary">Enterprize Application Development</span>
-                <br />
-                <br />
-                <span style="font-size: larger; margin-left: 200px" class="label label-success">Term Project</span>
-                <br />
-                <br />
-                <br />
-                <span style="font-size: larger; margin-left: 200px" class="label label-info">Submited to: Sir Shuja ur Rehman</span>
-                <br />
-                <br />
-                <span style="font-size: larger; margin-left: 200px" class="label label-warning">Name : Shehraz Khan</span>
-                <br />
-                <br />
-                <span style="font-size: larger; margin-left: 200px" class="label label-danger">Roll No: Bitf12a046</span>
-                <br />
-                <br />
-                <br />
-                <br />
+                <blockquote>
+                    <p>
+                        Ad Globe is the fast and easy way to sell your stuff. It’s free.
 
+                        Within seconds you can list an item for sale (use your phone!)
+                        Within minutes your item will appear on Ad Globe
+                        Within hours you’ll hear from interested buyers
+                        Within days you’ll meet up with buyers and trade your stuff for cash
+                        Within weeks you will have simplified and improved your life
+
+                        Sell your used phone sitting in your drawer.
+                        Sell the guitar you never really play.
+                        Sell your sister’s baby stroller that’s hiding in her closet.
+                        Sell your motorcycle and upgrade to a newer one.
+                        Sell those shoes that don’t quite fit.
+                        Sell your car.
+
+                        On Ad Globe, there are buyers for almost anything you have to sell.
+                        Millions have already sold their stuff on Ad Globe. You can too.
+
+                        Don’t just let it sit there. Ad Globe it.
+
+                    </p>
+                </blockquote>
             </div>
 
         </form>

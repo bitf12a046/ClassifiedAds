@@ -1,0 +1,46 @@
+﻿@{
+   
+    if (ViewBag.flag)
+    {
+        Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+    }
+   
+}
+
+
+    <div style="margin-top:100px;margin-left:100px" class="row">
+
+    <div class="col-lg-6">
+        <div>
+
+
+            <select id="citySelector" name="cityBtn" class="form-control" data-toggle="dropdown" aria-expanded="false">
+
+                <option value="karachi">Karachi </option>
+                <option value="lahore">Lahore</option>
+                <option value="islamabad">Islamabad</option>
+                <option value="bahawalpur">Bahawalpur</option>
+                <option value="dgk">DGK</option>
+                <option value="rawalpindi">Rawalpindi</option>
+                <option value="gujranwala">Gujranwala</option>
+                <option value="sialkot">Sialkot</option>
+                <option value="abotabad">Abotabad</option>
+                <option value="bahawalnagar">Bahawalnagar</option>
+                <option value="queta">Queta</option>
+                <option value="peshawar">Peshawar</option>
+                <option value="qasur">Qasur</option>
+                <option value="shahdara">Shahdara</option>
+            </select>
+            <input type="text" class="form-control " id="searchbar1" name="searchbar" placeholder="search" aria-label="...">
+            <input type="button" id="searchbtn" name="serachbtn" class="icon-bar" style="background-color:lightseagreen" value="Search" />
+        </div><!-- /btn-group -->
+        <!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+</div>
+<div id="id1">
+
+</div>

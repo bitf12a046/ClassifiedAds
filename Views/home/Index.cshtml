@@ -1,13 +1,19 @@
 ﻿@{
+    if(ViewBag.flag){
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
-   
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+    }
+        
 }
 
     <!-- Search bar
     ================================================== -->
     <div style="margin-top:100px;margin-left:100px " class="active">
         <!--<form class="form-group" method="post" action="/Items/loadedItems1">-->
-          @*  @using (Html.BeginForm("loadedItems1", "Items", FormMethod.Post)){*@
+            @using (Html.BeginForm("loadedItems1", "Items", FormMethod.Post)){
             <div class="row">
 
                 <div class="col-lg-6">
@@ -32,12 +38,12 @@
                                 <option value="shahdara">Shahdara</option>
                             </select>
                         <input type="text" class="form-control " id="searchbar" name="searchbar"  placeholder="search" aria-label="...">
-                        <input type="button" class="success" value="search" onclick="search()" />  
+                       
                         </div><!-- /btn-group -->
                     <!-- /input-group -->
                 </div><!-- /.col-lg-6 -->
             </div><!-- /.row -->
-            @* }*@
+             }
         <!--</form>-->
     </div>
 <div class="form-horizontal" id="idiv">

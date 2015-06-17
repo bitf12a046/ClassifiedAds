@@ -58,6 +58,7 @@
 
 
                     <ul class=" nav nav-tabs navbar-right">
+                        <li class="form-group"><a href="/account/search" class="icon-bar" style="background-color:lightseagreen">Search Page</a></li>
                         <li class="form-group"><a href=@ViewBag.SignUp class="icon-bar" style="text-align:right;background-color:lightgreen">Sign up <span class="sr-only">(current)</span></a></li>
                         <li class="form-group"><a href=@ViewBag.SignIn class="icon-bar" style="background-color:lightsalmon">Sign in</a></li>
                         <li class="form-group"><a href=@ViewBag.SignIn class="icon-bar" style="background-color:lightseagreen">Submit an Ad</a></li>
@@ -82,11 +83,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div style="background-color: lightsteelblue">
+                        <div >
                             <h2><span>Ad's</span>-Globe</h2>
-                         <p style="font-size:x-large;margin-left:140px" class="text-center">Ad'sGlobe.com.pk is a free local classifieds site. Sell anything from used cars to mobiles, furniture, laptops, clothing and more. Submit ads for free and without creating an account. If you want to buy something - here you will find interesting items, cheaper than in the store. Start buying and selling in the most easy way on Ad'sGlobe.com.pk.
-                           </p>
-                        </div>
+                            <blockquote>
+                                <p >
+                                    Ad'sGlobe.com.pk is a free local classifieds site. Sell anything from used cars to mobiles, furniture, laptops, clothing and more. Submit ads for free and without creating an account. If you want to buy something - here you will find interesting items, cheaper than in the store. Start buying and selling in the most easy way on Ad'sGlobe.com.pk.
+                                </p>
+                                </blockquote>
+</div>
                     </div>
                     <!--Slider-->
                     <link rel="stylesheet" type="text/css" href="~/Liberaries/style.css" />
@@ -97,7 +101,7 @@
                     <script src="~/Liberaries/wowslider.js"></script>
                     <script src="~/Liberaries/script.js"></script>
                     
-                    <div id="wowslider-container1">
+                    <div  id="wowslider-container1">
                         <div class="ws_images">
                             <ul>
                                 <li><img src="~/Images/24611.jpg" alt="Bikes for sale" title="Bikes for sale" id="wows1_0" /></li>
@@ -199,6 +203,7 @@
     <script src="~/Liberaries/sweetalert-dev.js"></script>
     <script src="~/Liberaries/sweetalert.min.js"></script>
 <script>
+    
         function termOfUse()
         {
             
@@ -210,8 +215,7 @@
         }
         
         $(window).load(function () {
-            var name=document.title;
-        swal("Well Come to"+ name);
+           
         if (getCookie("email") != "") {
             swal('user already signin');
 
@@ -222,7 +226,7 @@
         
         function setUser() {
             if (getCookie("email") != "") {
-                
+                swal('user already signIn');
                 $('#contact').append('<div><a href="/account/timeline" style="margin-left:50px" class="alert-success" >' + getCookie("email") + '</a></div>');
                 window.location.href = "/account/timeline";
             }
@@ -277,7 +281,7 @@
     <script>
         $('#checkName').on('click', function () {
             var name = $('#name').val();
-           
+          
             $.getJSON('/account/checkName?name=' + name, function (data) {
                 swal(data);
                 if (data == "")
@@ -286,6 +290,17 @@
                     $('#showAvailable').text('Name is not Availbale');
             }
                 );
+        });
+        $('#searchbtn').on('click', function () {
+            var cat = $('#citySelector').val();
+            var se = $('#searchbar1').val();
+            swal('No data find');
+            $.getJSON('/account/searchCategory?cat=' + cat +"&se ="+ se, function(data) {
+                
+                for (i = 0; i < data.size; i++) {
+                    $('#id1').append('<p>Name:' + data[i].Company + '<br>Description:' + data[i].Description + '<br>' + '</p>');
+                }
+            });
         });
         function nameVerify() {
             var name = $('#name').val();

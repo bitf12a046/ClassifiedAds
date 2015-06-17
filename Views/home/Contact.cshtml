@@ -1,6 +1,13 @@
 ﻿@model MvcApplication1.Models.Messages
 @{
-    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    if (ViewBag.flag)
+    {
+        Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+    }
 }
     <div id="contact-page" class="container">
         <div class="bg">

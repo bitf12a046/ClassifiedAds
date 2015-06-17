@@ -57,6 +57,7 @@
 
 
                     <ul class=" nav nav-tabs navbar-right">
+                        <li class="form-group"><a href="/account/search" class="icon-bar" style="background-color:lightseagreen">Search Page</a></li>
                      <li class="nav-pills"> User ID:  <a name="id" class="alert-success">@Request.Cookies["userID"].Value</a></li>
                         <li class="form-group"><a onclick="signoutUser()" href="/" class="icon-bar" style="text-align:right;background-color:lightgreen">Sign out <span class="sr-only">(current)</span></a></li>
                        
@@ -131,7 +132,7 @@
                                 <li><a class="alert-success" href=@ViewBag.About>Online Help</a></li>
                                 <li><a class="alert-success" href=@ViewBag.SignUp>Sign Up</a></li>
                                 <li><a class="alert-success" href=@ViewBag.SignIn>Sign In</a></li>
-                                <li><a class="alert-success" href=@ViewBag.SignIn>Submit an Ad</aclass></li>
+                                <li><a class="alert-success" href=@ViewBag.SignIn>Submit an Ad</a></li>
                                 <li><a href=@ViewBag.Contact>FAQ’s</a></li>
                             </ul>
                         </div>
@@ -182,7 +183,26 @@
     <link href="~/Liberaries/sweetalert.css" rel="stylesheet" />
     <script src="~/Liberaries/sweetalert-dev.js"></script>
     <script src="~/Liberaries/sweetalert.min.js"></script>
-    <script>
+    <script type="text/javascript">
+        $('#searchbtn').on('click', function () {
+            var cat = $('#citySelector').val();
+            var se = $('#searchbar').val();
+          
+            $.getJSON('/account/searchCategory?cat=' + cat + '& se=' + se, function (data) {
+                for (i = 0; i < data.size; i++) {
+                    $('#id1').append('<p>Name:' + data[i].Company + '<br>Description:' + data[i].Description +'<br>'+ '</p>');
+                }
+            });
+        });
+        $(window).load(function () {
+
+            if (getCookie("email") != "") {
+                swal('user already signin');
+
+                $('#contact').append('<a style="margin-left:50px" href="/account/timeline" class="alert-success">' + getCookie("email") + '</a>');
+
+            }
+        });
         function termOfUse() {
 
             swal('Terms of Use', 'You will not use it for illigal puposes.');
@@ -228,9 +248,10 @@
         }
         function signoutUser() {
 
-
+            document.cookie = 'UserId=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
             document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
             document.cookie = 'password=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            window.location.href = "/";
         }
         /* function getCookie(name)
          {
